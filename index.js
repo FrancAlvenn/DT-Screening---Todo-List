@@ -71,8 +71,8 @@ const grayBtn = document.getElementById('grayThemeBtn');
 const darkBtn = document.getElementById('darkThemeBtn');
 
 function applyTheme(theme) {
-  document.body.classList.remove('light', 'gray', 'dark');
-  document.body.classList.add(theme);
+    document.body.classList.remove('light', 'gray', 'dark');
+    document.body.classList.add(theme);
 }
 
 lightBtn.addEventListener('click', () => applyTheme('light'));
