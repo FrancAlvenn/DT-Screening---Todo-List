@@ -59,6 +59,10 @@ button:hover {
 
 ul {
     list-style: none;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
 }
 
 li {
