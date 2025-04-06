@@ -15,6 +15,15 @@ body {
     min-height: 100vh;
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
 .container {
     background: white;
     padding: 2rem;
@@ -131,6 +140,117 @@ a:hover {
     text-decoration: underline;
 }
 
+
+/* Theme */
+
+    .theme{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .theme button{
+        padding: 1.1rem 1.1rem;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .theme #lightThemeBtn{
+        background-color: #fff;
+    }
+
+    .theme #darkThemeBtn{
+        background-color: #333;
+    }
+
+    .theme #grayThemeBtn{
+        background-color: #666;
+    }
+
+    /* Light theme - default */
+    body.light {
+        background-color: #ffffff;
+        color: #333;
+    }
+
+    body.light input,
+    body.light li {
+        background-color: #f9f9f9;
+        color: #333;
+        border-color: #ddd;
+    }
+
+    body.light li.completed span {
+        color: #777;
+    }
+
+    body.light .delete-btn {
+        color: #cc0000;
+    }
+
+    /* Gray theme */
+
+    body.gray {
+        background-color: #e5e5e5;
+        color: #222;
+    }
+
+    body.gray .container{
+        background-color: #e9e9e9;
+        color: #222;
+    }
+
+    body.gray input,
+    body.gray li {
+        background-color: #d4d4d4;
+        color: #222;
+        border-color: #bbb;
+    }
+
+    body.gray li.completed span {
+        color: #666;
+    }
+
+    body.gray .delete-btn {
+        color: #990000;
+    }
+
+    /* Dark theme */
+
+    body.dark {
+        background-color: #121212;
+        color: #f1f1f1;
+    }
+
+    body.dark .container{
+        background-color: #191919;
+        color: #f1f1f1;
+    }
+
+    body.dark input,
+    body.dark li {
+        background-color: #1e1e1e;
+        color: #f1f1f1;
+        border-color: #333;
+    }
+
+    body.dark li.completed span {
+        color: #999;
+    }
+
+    body.dark .delete-btn {
+        color: #ff6666;
+    }
+
+
+/* Responsive Media Query */
 
 @media (max-width: 600px) {
     body {

@@ -62,3 +62,19 @@ function deleteTask(li){
     // Remove from DOM after animation completes
     setTimeout(() => li.remove(), 300);
 }
+
+
+// Theme Change
+
+const lightBtn = document.getElementById('lightThemeBtn');
+const grayBtn = document.getElementById('grayThemeBtn');
+const darkBtn = document.getElementById('darkThemeBtn');
+
+function applyTheme(theme) {
+  document.body.classList.remove('light', 'gray', 'dark');
+  document.body.classList.add(theme);
+}
+
+lightBtn.addEventListener('click', () => applyTheme('light'));
+grayBtn.addEventListener('click', () => applyTheme('gray'));
+darkBtn.addEventListener('click', () => applyTheme('dark'));
