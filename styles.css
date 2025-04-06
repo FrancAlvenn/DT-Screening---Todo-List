@@ -62,6 +62,7 @@ ul {
     width: 100%;
     max-height: 400px;
     overflow-y: auto;
+    overflow-x: hidden;
     margin-bottom: 1rem;
 }
 
@@ -74,13 +75,39 @@ li {
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 li.completed span {
     text-decoration: line-through;
     color: #777;
 }
+
+/* Added animation for adding */
+
+    li.enter {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    li.enter-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* Added animation for removing */
+
+    li.exit {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    li.exit-active {
+        opacity: 0;
+        transform: translateX(20px);
+    }
 
 .delete-btn {
     background: none;

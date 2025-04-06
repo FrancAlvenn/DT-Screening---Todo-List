@@ -23,11 +23,21 @@ function addTask() {
     const deleteBtn = document.createElement('button');
     deleteBtn.innerHTML = '❌';
     deleteBtn.classList.add('delete-btn');
-    deleteBtn.addEventListener('click', () => li.remove());
+    deleteBtn.addEventListener('click', () => deleteTask(li));
 
     li.appendChild(span);
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
+
+    // Do animation for entering
+    li.classList.add('enter');
+    taskList.appendChild(li);
+
+    // Trigger transition
+    requestAnimationFrame(() => {
+        li.classList.add('enter-active');
+        li.classList.remove('enter');
+    });
 
     taskInput.value = '';
     taskInput.focus();
@@ -35,9 +45,20 @@ function addTask() {
 
 
 // Function to delete a task
-function deleteTask(){
-    const deleteBtn = document.querySelectorAll('.delete-btn');
-    deleteBtn.forEach(btn => {
-        btn.addEventListener('click', () => btn.parentElement.remove());
+function deleteTask(li){
+    // Old way of deleting tasks - without animations
+    // const deleteBtn = document.querySelectorAll('.delete-btn');
+    // deleteBtn.forEach(btn => {
+    //     btn.addEventListener('click', () => btn.parentElement.remove());
+    // });
+
+    // Do animation - exiting
+    li.classList.add('exit');
+    requestAnimationFrame(() => {
+      li.classList.add('exit-active');
+      li.classList.remove('exit');
     });
+  
+    // Remove from DOM after animation completes
+    setTimeout(() => li.remove(), 300);
 }
